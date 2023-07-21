@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+    <title>HOME | Landing Page</title>
+</head>
+
+<body id="home">
+
+    <!-- navigation -->
+
+    <div class="navigation">
+        <div class="container">
+            <div class="box-navigation animate__animated animate__fadeInDown">
+                <div class="box">
+                    <h1>Disdukcapil Sukoharjo</h1>
+                </div>
+                <div class="box menu-navigation">
+                    <ul>
+                        <li>
+                            <a href="index.html">Beranda</a>
+                        </li>
+                        <li>
+                            <a href="#home">Profil</a>
+                            <div class="dropdown-content">
+                                <a href="profil.html">Profil</a>
+                                <a href="visi-misi.html">Visi-Misi</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="persyaratan.html">Persyaratan</a>
+
+                        </li>
+                        <li>
+                            <a href="#">Pelayanan</a>
+                            <div class="dropdown-content">
+                                <a href="pelayanan.html">Pembuatan Akte</a>
+                                <a href="suara-warga.html">suara Warga</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="berita.html">Berita</a>
+                        </li>
+                        <li>
+                            <a href="data.html">Data</a>
+                        </li>
+                        <li>
+                            <a href="kontak.html">Kontak</a>
+                        </li>
+                </div>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    </section>
+    <!-- navigation -->
+
+    <div class="pelayanan">
+        <h1>
+            Pelayanan
+        </h1>
+    </div>
+    <title>Form Pembuatan Akte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .pelayanan {
+            padding: 30px;
+            background-color: #343549;
+        }
+
+        .pelayanan h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 95%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: "Poppins", sans-serif;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            margin-inline: auto;
+        }
+
+        header {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("../../image/beranda.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navigation {
+            width: 100%;
+            padding: 20px 0 10px 0;
+            background-color: #2b2d42;
+        }
+
+        .navigation .box-navigation {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navigation .box-navigation .box:nth-child(1) h1 {
+            font-size: 34px;
+            color: rgb(255, 255, 255);
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li {
+            margin-left: 40px;
+            position: relative;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li a:hover {
+            color: greenyellow;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #2b2d42;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+    </head>
+
+
+    <h1>Form Pembuatan Akte</h1>
+    <form method="get">
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tempat_lahir">Tempat Lahir:</label>
+            <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tgl_lahir">Tanggal Lahir:</label>
+            <input type="date" id="tgl_lahir" name="tgl_lahir" required>
+        </div>
+
+        <div class="form-group">
+            <label for="jenis_kelamin">Jenis Kelamin:</label>
+            <select id="jenis_kelamin" name="jenis_kelamin" required>
+                <option value="">Pilih jenis kelamin</option>
+                <option value="laki-laki">Laki-laki</option>
+                <option value="perempuan">Perempuan</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="alamat" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="agama">Agama:</label>
+            <select id="agama" name="agama" required>
+                <option value="">Pilih agama</option>
+                <option value="islam">Islam</option>
+                <option value="kristen">Kristen</option>
+                <option value="katolik">Katolik</option>
+                <option value="hindu">Hindu</option>
+                <option value="budha">Budha</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="kewarganegaraan">Kewarganegaraan:</label>
+            <input type="text" id="kewarganegaraan" name="kewarganegaraan" required>
+        </div>
+
+        <div class="form-group">
+            <label for="foto">Foto:</label>
+            <input type="file" id="foto" name="foto" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+
+</body>

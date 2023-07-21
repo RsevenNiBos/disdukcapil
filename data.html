@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+    <title>Disdukcapil Sukoharjo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: "Poppins", sans-serif;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            margin-inline: auto;
+
+        }
+
+        header {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("../../image/beranda.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navigation {
+            width: 100%;
+            padding: 20px 0 10px 0;
+            background-color: #2b2d42;
+        }
+
+        .navigation .box-navigation {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navigation .box-navigation .box:nth-child(1) h1 {
+            font-size: 34px;
+            color: rgb(255, 255, 255);
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li {
+            margin-left: 40px;
+            position: relative;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li a:hover {
+            color: greenyellow;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #2b2d42;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        .containeer {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-btn {
+            padding: 10px 20px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #bbb;
+        }
+
+        .arrow-down {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 5px 0;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        #population-table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #population-table th,
+        #population-table td {
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navigation .box-navigation {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navigation .box-navigation .box:nth-child(1) h1 {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            .navigation .box-navigation .box:nth-child(2) ul {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+            }
+
+            .navigation .box-navigation .box:nth-child(2) ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .navigation .box-navigation .box:nth-child(2) .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background-color: transparent;
+            }
+
+            .navigation .box-navigation .box:nth-child(2) .dropdown-content a {
+                padding: 0;
+                color: rgb(255, 255, 255);
+                font-size: 14px;
+                margin-left: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body id="home">
+
+    <!-- navigation -->
+
+    <div class="navigation">
+        <div class="container">
+            <div class="box-navigation animate__animated animate__fadeInDown">
+                <div class="box">
+                    <h1>Disdukcapil Sukoharjo</h1>
+                </div>
+                <div class="box menu-navigation">
+                    <ul>
+                        <li>
+                            <a href="index.html">Beranda</a>
+                        </li>
+                        <li>
+                            <a href="#home">Profil</a>
+                            <div class="dropdown-content">
+                                <a href="profil.html">Profil</a>
+                                <a href="visi-misi.html">Visi-Misi</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="persyaratan.html">Persyaratan</a>
+                        </li>
+                        <li>
+                            <a href="#">Pelayanan</a>
+                            <div class="dropdown-content">
+                                <a href="pelayanan.html">Pembuatan Akte</a>
+                                <a href="suara-warga.html">Suara Warga</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="berita.html">Berita</a>
+                        </li>
+                        <li>
+                            <a href="data.html">Data</a>
+                        </li>
+                        <li>
+                            <a href="kontak.html">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="containeer">
+        <h2>Data Jumlah Penduduk per Tahun dan Kecamatan</h2>
+        <div class="dropdown">
+            <button class="dropdown-btn">Pilih Tahun <i class="arrow-down"></i></button>
+            <div id="tahun-dropdown" class="dropdown-content"></div>
+        </div>
+        <table id="population-table" class="hidden"></table>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        const tahunDropdownBtn = document.querySelector('.dropdown-btn');
+        const tahunDropdownContent = document.getElementById('tahun-dropdown');
+        const populationTable = document.getElementById('population-table');
+
+        // Sample data
+        const tahunPopulation = [
+            { tahun: 2022, kecamatan: 'Baki', pria: 28675, wanita: 28827 },
+            { tahun: 2022, kecamatan: 'Bendosari', pria: 31975, wanita: 31856 },
+            { tahun: 2022, kecamatan: 'Bulu', pria: 18863, wanita: 18892 },
+            { tahun: 2022, kecamatan: 'Gatak', pria: 26610, wanita: 26653 },
+            { tahun: 2022, kecamatan: 'Grogol', pria: 28675, wanita: 28827 },
+            { tahun: 2022, kecamatan: 'Kartasura', pria: 31975, wanita: 31856 },
+            { tahun: 2022, kecamatan: 'Mojolaban', pria: 45803, wanita: 45977 },
+            { tahun: 2022, kecamatan: 'Nguter', pria: 27792, wanita: 27383 },
+            { tahun: 2022, kecamatan: 'Polokarto', pria: 43231, wanita: 42938 },
+            { tahun: 2022, kecamatan: 'Sukoharjo', pria: 48716, wanita: 48587 },
+            { tahun: 2022, kecamatan: 'Tawangsari', pria: 28254, wanita: 27900 },
+            { tahun: 2022, kecamatan: 'Weru ', pria: 28675, wanita: 28827 },
+            { tahun: 2021, kecamatan: 'Baki', pria: 28623, wanita: 28232 },
+            { tahun: 2021, kecamatan: 'Bendosari', pria: 31342, wanita: 31223 },
+            { tahun: 2021, kecamatan: 'Bulu', pria: 18234, wanita: 18323 },
+            { tahun: 2021, kecamatan: 'Gatak', pria: 26234, wanita: 26123 },
+            { tahun: 2021, kecamatan: 'Grogol', pria: 28423, wanita: 28654 },
+            { tahun: 2021, kecamatan: 'Kartasura', pria: 31764, wanita: 31346 },
+            { tahun: 2021, kecamatan: 'Mojolaban', pria: 45345, wanita: 45345 },
+            { tahun: 2021, kecamatan: 'Nguter', pria: 27353, wanita: 27235 },
+            { tahun: 2021, kecamatan: 'Polokarto', pria: 43783, wanita: 42562 },
+            { tahun: 2021, kecamatan: 'Sukoharjo', pria: 48098, wanita: 48002 },
+            { tahun: 2021, kecamatan: 'Tawangsari', pria: 28145, wanita: 27083 },
+            { tahun: 2021, kecamatan: 'Weru ', pria: 28573, wanita: 28672 },
+            { tahun: 2020, kecamatan: 'Baki', pria: 28675, wanita: 28827 },
+            { tahun: 2020, kecamatan: 'Bendosari', pria: 31975, wanita: 31856 },
+            { tahun: 2020, kecamatan: 'Bulu', pria: 18863, wanita: 18892 },
+            { tahun: 2020, kecamatan: 'Gatak', pria: 26610, wanita: 26653 },
+            { tahun: 2020, kecamatan: 'Grogol', pria: 28675, wanita: 28827 },
+            { tahun: 2020, kecamatan: 'Kartasura', pria: 31975, wanita: 31856 },
+            { tahun: 2020, kecamatan: 'Mojolaban', pria: 45803, wanita: 45977 },
+            { tahun: 2020, kecamatan: 'Nguter', pria: 27792, wanita: 27383 },
+            { tahun: 2020, kecamatan: 'Polokarto', pria: 43231, wanita: 42938 },
+            { tahun: 2020, kecamatan: 'Sukoharjo', pria: 48716, wanita: 48587 },
+            { tahun: 2020, kecamatan: 'Tawangsari', pria: 28254, wanita: 27900 },
+            { tahun: 2020, kecamatan: 'Weru ', pria: 28675, wanita: 28827 },
+            { tahun: 2019, kecamatan: 'Baki', pria: 28675, wanita: 28827 },
+            { tahun: 2019, kecamatan: 'Bendosari', pria: 31975, wanita: 31856 },
+            { tahun: 2019, kecamatan: 'Bulu', pria: 18863, wanita: 18892 },
+            { tahun: 2019, kecamatan: 'Gatak', pria: 26610, wanita: 26653 },
+            { tahun: 2019, kecamatan: 'Grogol', pria: 28675, wanita: 28827 },
+            { tahun: 2019, kecamatan: 'Kartasura', pria: 31975, wanita: 31856 },
+            { tahun: 2019, kecamatan: 'Mojolaban', pria: 45803, wanita: 45977 },
+            { tahun: 2019, kecamatan: 'Nguter', pria: 27792, wanita: 27383 },
+            { tahun: 2019, kecamatan: 'Polokarto', pria: 43231, wanita: 42938 },
+            { tahun: 2019, kecamatan: 'Sukoharjo', pria: 48716, wanita: 48587 },
+            { tahun: 2019, kecamatan: 'Tawangsari', pria: 28254, wanita: 27900 },
+            { tahun: 2019, kecamatan: 'Weru ', pria: 28675, wanita: 28827 },
+            { tahun: 2018, kecamatan: 'Baki', pria: 28675, wanita: 28827 },
+            { tahun: 2018, kecamatan: 'Bendosari', pria: 31975, wanita: 31856 },
+            { tahun: 2018, kecamatan: 'Bulu', pria: 18863, wanita: 18892 },
+            { tahun: 2018, kecamatan: 'Gatak', pria: 26610, wanita: 26653 },
+            { tahun: 2018, kecamatan: 'Grogol', pria: 28675, wanita: 28827 },
+            { tahun: 2018, kecamatan: 'Kartasura', pria: 31975, wanita: 31856 },
+            { tahun: 2018, kecamatan: 'Mojolaban', pria: 45803, wanita: 45977 },
+            { tahun: 2018, kecamatan: 'Nguter', pria: 27792, wanita: 27383 },
+            { tahun: 2018, kecamatan: 'Polokarto', pria: 43231, wanita: 42938 },
+            { tahun: 2018, kecamatan: 'Sukoharjo', pria: 48716, wanita: 48587 },
+            { tahun: 2018, kecamatan: 'Tawangsari', pria: 28254, wanita: 27900 },
+            { tahun: 2018, kecamatan: 'Weru ', pria: 28675, wanita: 28827 },
+
+
+        ];
+
+        // Get unique tahun values
+        const uniqueTahun = [...new Set(tahunPopulation.map(data => data.tahun))];
+
+        // Toggle dropdown
+        function toggleDropdown() {
+            tahunDropdownContent.style.display = tahunDropdownContent.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Render dropdown items
+        function renderDropdownItems() {
+            uniqueTahun.forEach((tahun) => {
+                const item = document.createElement('a');
+                item.href = '#';
+                item.textContent = tahun;
+                item.addEventListener('click', () => {
+                    displayPopulationTable(tahun);
+                });
+                tahunDropdownContent.appendChild(item);
+            });
+        }
+
+        // Display population table
+        function displayPopulationTable(tahun) {
+            const selectedData = tahunPopulation.filter(data => data.tahun === tahun);
+            if (selectedData.length > 0) {
+                let tableHTML = `
+                <thead>
+                    <tr>
+                        <th>Kecamatan</th>
+                        <th>Jumlah Penduduk Pria</th>
+                        <th>Jumlah Penduduk Wanita</th>
+                        <th>Total Jumlah Penduduk</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+                selectedData.forEach(data => {
+                    tableHTML += `
+                    <tr>
+                        <td>${data.kecamatan}</td>
+                        <td>${data.pria}</td>
+                        <td>${data.wanita}</td>
+                        <td>${data.pria + data.wanita}</td>
+                    </tr>
+                `;
+                });
+                tableHTML += '</tbody>';
+
+                populationTable.innerHTML = tableHTML;
+                populationTable.classList.remove('hidden');
+            } else {
+                populationTable.innerHTML = '';
+                populationTable.classList.add('hidden');
+            }
+        }
+
+        // Event listener
+        tahunDropdownBtn.addEventListener('click', toggleDropdown);
+
+        // Render dropdown items
+        renderDropdownItems();
+
+    </script>
+</body>
+
+</html>

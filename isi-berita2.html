@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+
+<div class="navigation">
+    <div class="container">
+        <div class="box-navigation animate__animated animate__fadeInDown">
+            <div class="box">
+                <h1>Disdukcapil Sukoharjo</h1>
+            </div>
+            <div class="box menu-navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="#home">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil</a>
+                            <a href="visi-misi.html">Visi-Misi</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="persyaratan.html">Persyaratan</a>
+                    </li>
+                    <li>
+                        <a href="#">Pelayanan</a>
+                        <div class="dropdown-content">
+                            <a href="pelayanan.html">Pembuatan Akte</a>
+                            <a href="suara-warga.html">Suara Warga</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="berita.html">Berita</a>
+                    </li>
+                    <li>
+                        <a href="data.html">Data</a>
+                    </li>
+                    <li>
+                        <a href="kontak.html">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<title>Layout Berita</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+        height: auto;
+    }
+
+    .container {
+        width: 90%;
+        margin-inline: auto;
+
+    }
+
+    header {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url("../../image/beranda.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .navigation {
+        width: 100%;
+        padding: 20px 0 10px 0;
+        background-color: #2b2d42;
+    }
+
+    .navigation .box-navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navigation .box-navigation .box:nth-child(1) h1 {
+        font-size: 34px;
+        color: rgb(255, 255, 255);
+    }
+
+    .navigation .box-navigation .box:nth-child(2) ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+    }
+
+    .navigation .box-navigation .box:nth-child(2) ul li {
+        margin-left: 40px;
+        position: relative;
+    }
+
+    .navigation .box-navigation .box:nth-child(2) ul li a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+    }
+
+    .navigation .box-navigation .box:nth-child(2) ul li a:hover {
+        color: greenyellow;
+    }
+
+    .navigation .box-navigation .box:nth-child(2) .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .navigation .box-navigation .box:nth-child(2) .dropdown-content a {
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+        color: #2b2d42;
+    }
+
+    .navigation .box-navigation .box:nth-child(2) .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .navigation .box-navigation .box:nth-child(2) ul li:hover .dropdown-content {
+        display: block;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .containerr {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .headline {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .date {
+        color: #888;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .author {
+        color: #888;
+        font-size: 14px;
+        font-style: italic;
+    }
+
+    .image-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .navigation .box-navigation {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul {
+            flex-direction: column;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li {
+            margin-left: 0;
+            margin-bottom: 10px;
+            position: static;
+        }
+
+        .navigation .box-navigation .box:nth-child(2) ul li a {
+            font-size: 14px;
+        }
+
+        .navigation .box-navigation .box:nth-child(3) {
+            display: block;
+        }
+
+        .navigation .box-navigation .box:nth-child(3) i {
+            font-size: 26px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+
+        .navigation .box-navigation .menu-navigation.active {
+            display: block;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="containerr">
+        <div class="header">
+            <h1 class="headline">[PENGUMUMAN] Pelayanan Weekend | Minggu ke-4 | 25 Maret 2023</h1>
+            <p class="date">24 Maret 2023
+
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="image/berita-1.jpg" alt="Gambar Berita">
+        </div>
+        <div class="content">
+            <br>
+            <p>Bagi masyarakat yang hendak mengurus administrasi kependudukan di Bulan Ramadhan, Dinas Dukcapil Kab. Skh
+                tetap membuka layanan weekend pada hari Sabtu, 25 Maret 2023 pukul 08.00 - 11.30 WIB.</p>
+            <br>
+
+            <p class="author">Disdukcapil Sukoharjo</p>
+        </div>
+    </div>
+</body>
+
+</html>
